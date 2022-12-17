@@ -75,11 +75,11 @@ export default function Navbar({userdata,logOut}) {
 
       <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
        {userdata? null : <> <li className="nav-item">
-        <Link className="nav-link" to="">Log In</Link>
+        <Link className="nav-link" to="login">Log In</Link>
         </li>
        
         <li className="nav-item">
-          <Link className="nav-link" to="register">Join Free</Link>
+          <Link className="nav-link" to="/">Join Free</Link>
         </li></>}
         {userdata?<li className="nav-item">
           <a onClick={logOut} className="nav-link" href='' >Logout</a>

@@ -56,7 +56,7 @@ const router = createHashRouter([
     {path:'platforms/:type', element:<Protection><Platforms/></Protection> },
     {path:'sort-by/:type', element:<Protection><SortBy/></Protection> },
     {path:'gamedetails/:id', element:<Protection><GameDetails/></Protection> },
-    {path:'register', element:<Login getusertoken={getusertoken}/>},
+    {path:'login', element:<Login getusertoken={getusertoken}/>},
     {index:true, element:<Signup/>},
     
     {path:'*', element:<h3 className="text-center mt-5">page not found</h3>},
