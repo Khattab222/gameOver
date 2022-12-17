@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gameOver/static/css/main.81525734.css",
-    "main.js": "/gameOver/static/js/main.eae096d1.js",
+    "main.js": "/gameOver/static/js/main.c332f4e8.js",
     "static/js/787.d1340d69.chunk.js": "/gameOver/static/js/787.d1340d69.chunk.js",
     "static/media/fa-solid-900.ttf": "/gameOver/static/media/fa-solid-900.b1a653db79258eeccc5d.ttf",
     "static/media/homebg.png": "/gameOver/static/media/homebg.0fddd1fbe0a5e0a0af93.png",
@@ -16,11 +16,11 @@
     "static/media/fa-v4compatibility.woff2": "/gameOver/static/media/fa-v4compatibility.4ee7f902d88f819e251c.woff2",
     "index.html": "/gameOver/index.html",
     "main.81525734.css.map": "/gameOver/static/css/main.81525734.css.map",
-    "main.eae096d1.js.map": "/gameOver/static/js/main.eae096d1.js.map",
+    "main.c332f4e8.js.map": "/gameOver/static/js/main.c332f4e8.js.map",
     "787.d1340d69.chunk.js.map": "/gameOver/static/js/787.d1340d69.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.81525734.css",
-    "static/js/main.eae096d1.js"
+    "static/js/main.c332f4e8.js"
   ]
 }
