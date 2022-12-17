@@ -48,7 +48,7 @@ useEffect(() => {
 
 
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {path:'/', element:<LayoutRouter userdata={userdata} logOut={logOut}/>, children:[
     {path:'home', element:<Protection><Home/></Protection> },
     {path:'all', element:<Protection><All/></Protection> },
