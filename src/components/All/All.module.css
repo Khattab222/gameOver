@@ -1,0 +1,20 @@
+.card{
+    background-color: #32383e;
+    cursor: pointer;
+    transition: all 0.5s;
+    
+}
+.card:hover{
+    transform: scale(1.07);
+}
+.textdark{
+    color: #272b30!important;
+    background-color: #7a8288;
+    margin:  0 10px;
+    border-radius: 15px;
+    padding: 0 10px;
+    font-size: 10px;
+    font-weight: 600;
+    
+  
+}
