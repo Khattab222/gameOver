@@ -113,7 +113,7 @@ export default function Login({getusertoken}) {
           <hr />
           <Link>Forgot Password</Link>
           <p>
-            Not a member yet ? <Link to="/register">Creat Account</Link>
+            Not a member yet ? <Link to="/">Creat Account</Link>
           </p>
         </div>
       </div>

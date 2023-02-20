@@ -7,7 +7,7 @@ export default function UsePlatformHook() {
 
   const [categorygames, setcategorygames] = useState([]);
   const [slicenumber, setslicenumber] = useState(20);
-  const [loading, setloading] = useState(false)
+  const [loading, setloading] = useState(false);
 
   // function to get games by category
   async function getAllplatforms(typecat) {
@@ -22,7 +22,7 @@ export default function UsePlatformHook() {
       options
     );
 
-    console.log(data.slice(0, 20));
+   
     setcategorygames(data.slice(0, slicenumber));
     setloading(false)
 

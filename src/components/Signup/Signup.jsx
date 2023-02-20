@@ -42,7 +42,7 @@ async function senddatatoapi() {
   if (data.message ==='success') {
     setApierroe('');
     setloading(false)
-    navigat('/')
+    navigat('/login')
     
     
     
@@ -140,7 +140,7 @@ function submit(e) {
         <small className=''>This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</small>
         <hr />
        
-        <p>Already a member? <Link to='/'>Log in</Link></p>
+        <p>Already a member? <Link to='/login'>Log in</Link></p>
     </div>
 
    </div>

@@ -1,4 +1,4 @@
-import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home";
 import jwt_decode from "jwt-decode";
 import Signup from "./components/Signup/Signup";
@@ -48,7 +48,7 @@ useEffect(() => {
 
 
 
-const router = createHashRouter([
+const router = createBrowserRouter([
   {path:'/', element:<LayoutRouter userdata={userdata} logOut={logOut}/>, children:[
     {path:'home', element:<Protection><Home/></Protection> },
     {path:'all', element:<Protection><All/></Protection> },
