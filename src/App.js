@@ -1,15 +1,15 @@
-import { createBrowserRouter, createHashRouter, Navigate, RouterProvider } from "react-router-dom";
-import Home from "./components/Home/Home";
 import jwt_decode from "jwt-decode";
-import Signup from "./components/Signup/Signup";
-import LayoutRouter from "./LayoutRouter";
-import Login from './components/Login/Login';
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
+import { createHashRouter, Navigate, RouterProvider } from "react-router-dom";
 import All from "./components/All/All";
 import Category from "./components/Category/Category";
-import Platforms from "./components/Platforms/Platforms";
-import SortBy from "./components/Sortedby/SortBy";
 import GameDetails from './components/GameDetails/GameDetails';
+import Home from "./components/Home/Home";
+import Login from './components/Login/Login';
+import Platforms from "./components/Platforms/Platforms";
+import Signup from "./components/Signup/Signup";
+import SortBy from "./components/Sortedby/SortBy";
+import LayoutRouter from "./LayoutRouter";
 
 
 
@@ -31,13 +31,14 @@ useEffect(() => {
     setUserdata(decoded)
 
   }
-
+// logout func
   function logOut() {
     localStorage.removeItem('usertoken');
     setUserdata(null)
     
   }
 
+  // protection routes
   function Protection(props) {
     if (localStorage.getItem('usertoken') === null) {
       return <Navigate to='/'/>
@@ -48,7 +49,7 @@ useEffect(() => {
 
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {path:'/', element:<LayoutRouter userdata={userdata} logOut={logOut}/>, children:[
     {path:'home', element:<Protection><Home/></Protection> },
     {path:'all', element:<Protection><All/></Protection> },
