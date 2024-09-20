@@ -29,12 +29,12 @@ export default function Login({getusertoken}) {
   // api function to send user data
   async function senddatatoapi() {
     let { data } = await axios.post(
-      " https://route-movies-api.vercel.app/signin",
+      "https://online-ecommerce.vercel.app/auth/login",
       userdata
     );
     console.log(data);
 
-    if (data.message === "success") {
+    if (data.message === "login success") {
       localStorage.setItem('usertoken',data.token);
       getusertoken()
       setApierroe("");

@@ -8,11 +8,11 @@ import Joi from 'joi';
 
 export default function Signup() {
 let initialuser = {
-  first_name:" ",
-last_name:" ",
+  userName:" ",
+
 email:" ",
 password:" ",
-age:23
+phone:''
 
 }
 let navigat = useNavigate()
@@ -36,8 +36,8 @@ function getuserinpute(e) {
 
 // api function to send user data 
 async function senddatatoapi() {
-  let {data} = await axios.post('https://route-movies-api.vercel.app/signup',userdata);
-  console.log(data);
+  let {data} = await axios.post('https://online-ecommerce.vercel.app/auth/signup',userdata);
+console.log(data)
 
   if (data.message ==='success') {
     setApierroe('');
@@ -56,24 +56,16 @@ async function senddatatoapi() {
 // validation 
 function validation () {
   const schema = Joi.object({
-    first_name: Joi.string()
+    userName: Joi.string()
         .alphanum()
         .min(3)
         .max(30)
         .required(),
-    last_name: Joi.string()
-        .alphanum()
-        .min(3)
-        .max(80)
-        .required(),
     password: Joi.string()
         .pattern(new RegExp('^[a-zA-Z0-9]{4,10}$')),
-        email: Joi.string()
+    email: Joi.string()
         .email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
-        age:Joi.number()
-        .min(3)
-        .max(50)
-        .required(),
+    phone:Joi.number().required(),
 
 
   });
@@ -122,18 +114,16 @@ function submit(e) {
         </p>
       ))}
         <form onSubmit={submit}>
-       <div className="row   ">
-       <div className="col-6">
-       <input onChange={getuserinpute} type="text" placeholder='First Name' name='first_name' className='border-0  bg-dark text-white form-control my-3 ' />
-       </div>
+      
+    
+       <input onChange={getuserinpute} type="text" placeholder='UserName' name='userName' className='border-0  bg-dark text-white form-control my-3 ' />
+      
   
-       <div className="col-6">
-       <input onChange={getuserinpute} type="text" placeholder='Last name' name='last_name' className='border-0  bg-dark text-white form-control my-3 ' />
-       </div>
+      
        
-       </div>
+     
        <input onChange={getuserinpute} type="email" placeholder='Email Address' name='email' className='border-0  bg-dark text-white form-control my-3 ' />
-       <input onChange={getuserinpute} type="number" placeholder='Age' name='age' className='border-0  bg-dark text-white form-control my-3 ' />
+       <input onChange={getuserinpute} type="number" placeholder='phone' name='phone' className='border-0  bg-dark text-white form-control my-3 ' />
        <input onChange={getuserinpute} type="password" placeholder='Password' name='password' className='border-0  bg-dark text-white form-control my-3 ' />
         <button  className='btn btn-dark form-control'> {loading? <i className='fas fa-spinner fa-spin'></i>:'Creat Account'} </button>
         </form>
