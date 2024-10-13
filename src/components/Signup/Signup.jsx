@@ -36,20 +36,29 @@ function getuserinpute(e) {
 
 // api function to send user data 
 async function senddatatoapi() {
-  let {data} = await axios.post('https://online-ecommerce.vercel.app/auth/signup',userdata);
-console.log(data)
 
-  if (data.message ==='success') {
-    setApierroe('');
-    setloading(false)
-    navigat('/login')
+  try {
+    let {data} = await axios.post('https://online-ecommerce.vercel.app/auth/signup',userdata);
+    console.log(data)
     
-    
-    
-  }else{
-    setApierroe(data.message)
+      if (data.message ==='success') {
+        setApierroe('');
+        setloading(false)
+        navigat('/login')
+        
+        
+        
+      }else{
+        setApierroe(data.message)
+       
+      }
+  } catch (error) {
+    console.log(error)
     setloading(false)
   }
+
+
+
 }
 
 

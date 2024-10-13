@@ -1,7 +1,7 @@
 import React from 'react'
 import GameDetailsItem from '../items/GameDetailsItem'
 import UsedetailsHook from './Usedetailshook'
-import { useState } from 'react';
+
 
 export default function GameDetails() {
 

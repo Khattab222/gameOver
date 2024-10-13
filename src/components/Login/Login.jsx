@@ -28,22 +28,30 @@ export default function Login({getusertoken}) {
 
   // api function to send user data
   async function senddatatoapi() {
-    let { data } = await axios.post(
-      "https://online-ecommerce.vercel.app/auth/login",
-      userdata
-    );
-    console.log(data);
+try {
+  let { data } = await axios.post(
+    "https://online-ecommerce.vercel.app/auth/login",
+    userdata
+  );
 
-    if (data.message === "login success") {
-      localStorage.setItem('usertoken',data.token);
-      getusertoken()
-      setApierroe("");
-      setloading(false);
-      navigat("/home");
-    } else {
-      setApierroe(data.message);
-      setloading(false);
-    }
+
+  if (data.message === "login success") {
+    localStorage.setItem('usertoken',data.token);
+    getusertoken()
+    setApierroe("");
+    setloading(false);
+    navigat("/home");
+  } else {
+   
+  }
+} catch (error) {
+console.log(error.response.data.Error)
+  setApierroe(error.response.data.Error);
+  setloading(false);
+}
+
+
+ 
   }
 
   // validation
