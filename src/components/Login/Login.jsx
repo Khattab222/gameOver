@@ -34,18 +34,16 @@ try {
     userdata
   );
 
+  
 
-  if (data.message === "login success") {
     localStorage.setItem('usertoken',data.token);
     getusertoken()
     setApierroe("");
     setloading(false);
     navigat("/home");
-  } else {
-   
-  }
+
 } catch (error) {
-console.log(error.response.data.Error)
+
   setApierroe(error.response.data.Error);
   setloading(false);
 }

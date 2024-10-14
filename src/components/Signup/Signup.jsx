@@ -39,21 +39,15 @@ async function senddatatoapi() {
 
   try {
     let {data} = await axios.post('https://online-ecommerce.vercel.app/auth/signup',userdata);
-    console.log(data)
+
     
-      if (data.message ==='success') {
+    
         setApierroe('');
         setloading(false)
         navigat('/login')
-        
-        
-        
-      }else{
-        setApierroe(data.message)
-       
-      }
+    
   } catch (error) {
-    console.log(error)
+ 
     setloading(false)
   }
 
