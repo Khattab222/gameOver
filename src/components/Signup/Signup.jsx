@@ -47,7 +47,7 @@ async function senddatatoapi() {
         navigat('/login')
     
   } catch (error) {
- 
+    setApierroe(error.response.data.Error);
     setloading(false)
   }
 
